@@ -45,7 +45,7 @@ const EXPERIENCE = [
     company: "University of South Dakota",
     date: "August 2024 - Present",
     bullets: [
-      "Architected a full-stack RAG pipeline using LLMs for DentiMap, an AI-powered dental diagnostic tool — selected as a Finalist in the SD Governor's Giant Vision Competition out of 100+ submissions.",
+      "Architected a full-stack RAG pipeline using LLMs for DentiMap, an AI-powered dental diagnostic tool, selected as a Finalist in the SD Governor's Giant Vision Competition out of 100+ submissions.",
       "Leading technology commercialization and market validation as Technical Lead for the NSF Great Plains I-Corps program, translating AI research into viable product strategy.",
       "Co-authoring a peer-reviewed research paper on AI applications in Endocrinology, synthesizing state-of-the-art ML methodologies for clinical decision support systems.",
       "Investigating Quantum Computing algorithms and their intersection with AI optimization, exploring near-term applications in high-dimensional data processing."
@@ -59,7 +59,7 @@ const EXPERIENCE = [
       "Built and maintained a full-stack restaurant order management platform handling multi-vendor menus, real-time order routing, and kitchen workflows using Python (Django/FastAPI) and React.",
       "Integrated Clover POS API and Stripe Payment Gateway to process end-to-end transactions, managing webhook events, payment reconciliation, and refund flows across multiple restaurant clients.",
       "Engineered distributed microservices supporting 100,000+ concurrent users, optimizing PostgreSQL query performance and Redis caching strategies to reduce API response times under peak load.",
-      "Administered Azure Active Directory, managed domain hosting, DNS configurations, and network access policies as a System Admin — reducing deployment time by 40% and boosting uptime by 30% via CI/CD pipelines with GitHub Actions and Docker.",
+      "Administered Azure Active Directory, managed domain hosting, DNS configurations, and network access policies as a System Admin reducing deployment time by 40% and boosting uptime by 30% via CI/CD pipelines with GitHub Actions and Docker.",
       "Improved system reliability by 35% by implementing PyTest frameworks covering unit, integration, and payment flow testing across frontend and backend codebases."
     ]
   },
@@ -109,7 +109,7 @@ const PROJECTS = [
     subtitle: "AI Subscription Tracker · Mobile",
     category: "Mobile",
     tech: ["Flutter", "Dart", "Firebase", "Gemini AI", "Gmail API", "Riverpod", "Firestore", "Isar"],
-    desc: "Privacy-first Flutter app that uses Gmail API + Gemini AI to auto-detect subscriptions from your inbox, track spending, send renewal alerts, and detect price hikes — offline-first with Firestore sync.",
+    desc: "Privacy-first Flutter app that uses Gmail API + Gemini AI to auto-detect subscriptions from your inbox, track spending, send renewal alerts, and detect price hikes, offline-first with Firestore sync.",
     github: "https://github.com/qubeena07/TogglSub",
     liveUrl: null,
   },
