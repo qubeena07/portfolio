@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
+import Script from 'next/script';
 import { 
   Github, Linkedin, Mail, MapPin, 
   ChevronDown, ExternalLink, 
@@ -42,120 +43,112 @@ const EXPERIENCE = [
   {
     role: "Graduate Research Assistant",
     company: "University of South Dakota",
-    date: "March 2025 - Present",
+    date: "August 2024 - Present",
     bullets: [
-      "Architected a RAG-based pipeline using LLMs for 'DentiMap', leading to its selection as a Finalist in the SD Governor's Giant Vision Competition.",
-      "Conducting research on methodologies in Quantum Computing and AI applications in Endocrinology for academic publication.",
-      "Executing technology commercialization and market validation via the NSF Great Plains I-Corps program."
+      "Architected a full-stack RAG pipeline using LLMs for DentiMap, an AI-powered dental diagnostic tool — selected as a Finalist in the SD Governor's Giant Vision Competition out of 100+ submissions.",
+      "Leading technology commercialization and market validation as Technical Lead for the NSF Great Plains I-Corps program, translating AI research into viable product strategy.",
+      "Co-authoring a peer-reviewed research paper on AI applications in Endocrinology, synthesizing state-of-the-art ML methodologies for clinical decision support systems.",
+      "Investigating Quantum Computing algorithms and their intersection with AI optimization, exploring near-term applications in high-dimensional data processing."
     ]
   },
   {
-    role: "Full-Stack Software Engineer",
+    role: "Software Engineer",
     company: "Delta V Logics & Solutions",
     date: "Apr 2023 - May 2024",
     bullets: [
-      "Engineered distributed microservices handling 100,000+ concurrent users using Python and Django, optimizing database queries for high load.",
-      "Reduced deployment time by 40% and boosted uptime by 30% via CI/CD pipelines (GitHub Actions, Docker, Azure).",
-      "Improved system reliability by 35% by implementing robust PyTest frameworks for unit and integration testing."
+      "Built and maintained a full-stack restaurant order management platform handling multi-vendor menus, real-time order routing, and kitchen workflows using Python (Django/FastAPI) and React.",
+      "Integrated Clover POS API and Stripe Payment Gateway to process end-to-end transactions, managing webhook events, payment reconciliation, and refund flows across multiple restaurant clients.",
+      "Engineered distributed microservices supporting 100,000+ concurrent users, optimizing PostgreSQL query performance and Redis caching strategies to reduce API response times under peak load.",
+      "Administered Azure Active Directory, managed domain hosting, DNS configurations, and network access policies as a System Admin — reducing deployment time by 40% and boosting uptime by 30% via CI/CD pipelines with GitHub Actions and Docker.",
+      "Improved system reliability by 35% by implementing PyTest frameworks covering unit, integration, and payment flow testing across frontend and backend codebases."
     ]
   },
   {
-    role: "Mobile App Developer",
+    role: "Software Engineer",
     company: "Code Himalaya",
     date: "July 2022 - Oct 2023",
     bullets: [
-      "Led full-cycle mobile development with Flutter and Dart, reducing application crash rates by 50% through rigorous testing.",
-      "Integrated RESTful APIs ensuring 99.9% uptime for real-time data synchronization across platforms.",
-      "Boosted app responsiveness by 40% leveraging insights from A/B testing and user feedback loops."
+      "Developed and shipped cross-platform mobile applications using Flutter and Dart, owning the full development lifecycle from UI design to backend API integration and Play Store/App Store deployment.",
+      "Built RESTful backend services and responsive web frontends to support real-time data synchronization across mobile and web platforms, achieving 99.9% uptime.",
+      "Reduced application crash rates by 50% through systematic root cause analysis, implementing robust error handling, state management improvements, and rigorous device testing.",
+      "Boosted app responsiveness by 40% by profiling rendering bottlenecks, optimizing widget trees, and applying insights from A/B testing and user feedback loops."
     ]
   }
 ];
 
 const PROJECTS = [
   {
+    title: "AI Code Review Tool",
+    subtitle: "LLM-Powered DevOps",
+    category: "AI",
+    tech: ["TypeScript", "Next.js", "Express", "BullMQ", "Redis", "PostgreSQL", "Docker", "LLM", "GitHub API"],
+    desc: "GitHub-integrated app that uses LLMs to automatically review pull requests, post inline comments, flag security issues, and send Slack/email notifications via a full job-queue pipeline.",
+    github: "https://github.com/qubeena07/AI-Code-Review-Tool",
+    liveUrl: null,
+  },
+  {
+    title: "OnTrack AI",
+    subtitle: "NLP Habit Tracker · Live",
+    category: "AI",
+    tech: ["FastAPI", "spaCy", "NLP", "Next.js", "TypeScript", "SQLite", "JWT", "GitHub Actions"],
+    desc: "Full-stack habit tracker where users log habits in plain English. A custom spaCy NLP model parses, categorizes, and stores structured data automatically. Deployed and live.",
+    github: "https://github.com/qubeena07/Habit-tracker-using-NLP-and-fastapi",
+    liveUrl: "https://qubeena07.github.io/Habit-tracker-using-NLP-and-fastapi",
+  },
+  {
+    title: "Intelligent Hybrid Search",
+    subtitle: "Information Retrieval · Live",
+    category: "AI",
+    tech: ["BM25", "SentenceTransformers", "RRF", "NLTK", "Streamlit", "Hugging Face", "Python"],
+    desc: "Hybrid IR system over 20,000 Wikipedia articles combining BM25 sparse retrieval and dense SentenceTransformer embeddings fused via Reciprocal Rank Fusion. Live on Hugging Face Spaces.",
+    github: "https://github.com/qubeena07/Intelligent-Hybrid-Search",
+    liveUrl: "https://huggingface.co/spaces/Dipika07/Hybrid-IR",
+  },
+  {
+    title: "TogglSub",
+    subtitle: "AI Subscription Tracker · Mobile",
+    category: "Mobile",
+    tech: ["Flutter", "Dart", "Firebase", "Gemini AI", "Gmail API", "Riverpod", "Firestore", "Isar"],
+    desc: "Privacy-first Flutter app that uses Gmail API + Gemini AI to auto-detect subscriptions from your inbox, track spending, send renewal alerts, and detect price hikes — offline-first with Firestore sync.",
+    github: "https://github.com/qubeena07/TogglSub",
+    liveUrl: null,
+  },
+  {
+    title: "BizBot",
+    subtitle: "AI Receptionist · RAG",
+    category: "AI",
+    tech: ["RAG", "LLM", "TypeScript", "Python", "Docker", "Turborepo"],
+    desc: "Self-configuring AI receptionist that ingests business data via a RAG pipeline and integrates into any website with a single script tag — no coding required from the business owner.",
+    github: "https://github.com/qubeena07/BizBot",
+    liveUrl: null,
+  },
+  {
     title: "DentiMap",
-    subtitle: "AI Diagnostic Tool",
+    subtitle: "AI Diagnostic Tool · Award",
     category: "AI",
     tech: ["Python", "RAG", "LLM", "React"],
-    desc: "Award-winning AI screening tool utilizing RAG pipelines for high-accuracy diagnostics. Giant Vision Finalist."
+    desc: "Award-winning AI dental screening tool built with a RAG pipeline for high-accuracy diagnostics. Selected as a Finalist in the SD Governor's Giant Vision Competition.",
+    github: null,
+    liveUrl: null,
+  },
+  {
+    title: "Efficient Instrument Classification",
+    subtitle: "Real-Time Computer Vision",
+    category: "AI",
+    tech: ["PyTorch", "MobileNetV3", "ResNet18", "OpenCV", "Python"],
+    desc: "Real-time surgical instrument classification from video streams. MobileNetV3-Small achieves 86.36% accuracy at 4.55ms inference and 10 FPS with 0% frame drop. Part of the EICC Challenge.",
+    github: "https://github.com/qubeena07/-Efficient-Instrument-Classification",
+    liveUrl: null,
   },
   {
     title: "Distributed Deep Learning",
     subtitle: "High Performance Computing",
     category: "Systems",
-    tech: ["PyTorch DDP", "NCCL", "Python"],
-    desc: "Scalable DL infrastructure. Optimized throughput by 50% (reducing training time from 60s to 30s) through strategic batch scaling."
+    tech: ["PyTorch DDP", "NCCL", "Python", "CUDA"],
+    desc: "Scalable distributed deep learning infrastructure using PyTorch DDP and NCCL. Optimized throughput by 50%, cutting training time from 60s to 30s through strategic batch scaling.",
+    github: "https://github.com/qubeena07/Distributed-Deep-Learning-System-",
+    liveUrl: null,
   },
-  {
-    title: "Intelligent Hybrid Search",
-    subtitle: "Information Retrieval",
-    category: "AI",
-    tech: ["Streamlit", "Transformers", "RRF", "NLTK"],
-    desc: "Architected a full-stack hybrid information retrieval system. Integrated BM25 and Sentence Transformer algorithms."
-  },
-  {
-    title: "Order In",
-    subtitle: "Full Stack Mobile App",
-    category: "Mobile",
-    tech: ["Flutter", "Dart", "Firebase", "Node.js"],
-    desc: "A robust food ordering application featuring real-time tracking, seamless payment integration, and a crash-free user experience."
-  },
-  {
-    title: "Chowchow Express",
-    subtitle: "Logistics Platform",
-    category: "Web",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
-    desc: "Full-stack web application for logistics and user tracking. Implemented complex delivery route management and real-time dashboard."
-  },
-  {
-    title: "Skin Cancer Detection",
-    subtitle: "Medical AI",
-    category: "AI",
-    tech: ["TensorFlow", "ResNet50", "Python"],
-    desc: "Medical image classification system using ResNet50 with custom layers to achieve high-accuracy detection of malignant lesions."
-  },
-  {
-    title: "Pneumonia Detection",
-    subtitle: "Computer Vision",
-    category: "AI",
-    tech: ["CNN", "Streamlit", "OpenCV"],
-    desc: "Automated Chest X-Ray analysis tool utilizing Convolutional Neural Networks (CNNs) deployed via a Streamlit interface."
-  },
-  {
-    title: "IoT Driver Drowsiness",
-    subtitle: "Real-time Safety System",
-    category: "AI",
-    tech: ["OpenCV", "IoT", "CNN"],
-    desc: "Real-time safety system using OpenCV and IoT sensors to detect driver fatigue and trigger audio/visual alerts."
-  },
-  {
-    title: "Diabetes Prediction",
-    subtitle: "Predictive Analytics",
-    category: "AI",
-    tech: ["Scikit-Learn", "Pandas", "ML"],
-    desc: "Predictive modeling application analyzing health metrics to assess diabetes risk probabilities with high precision."
-  },
-  {
-    title: "Expense Tracker",
-    subtitle: "Finance Management",
-    category: "Mobile",
-    tech: ["Flutter", "SQLite", "Dart"],
-    desc: "Personal finance management tool allowing users to track, categorize, and visualize daily expenses with local storage."
-  },
-  {
-    title: "Tetris Clone",
-    subtitle: "Game Engineering",
-    category: "Mobile",
-    tech: ["Flutter", "Game Engine"],
-    desc: "Optimized mobile recreation of the classic Tetris game optimized for touch controls and smooth 60fps rendering."
-  },
-  {
-    title: "Quiz App",
-    subtitle: "Interactive Learning",
-    category: "Mobile",
-    tech: ["Flutter", "Dart", "JSON"],
-    desc: "Interactive quiz application with score tracking, timer logic, and multiple categories dynamically loaded from JSON."
-  }
 ];
 
 const SKILLS = [
@@ -503,9 +496,30 @@ export default function Portfolio() {
                   <div className="p-3 bg-violet-500/10 rounded-2xl text-violet-400 group-hover:text-white group-hover:bg-violet-500 transition-colors">
                     <Code2 size={24} />
                   </div>
-                  <a href={PERSONAL.github} target="_blank" className="text-slate-500 hover:text-white transition-colors hover:scale-110">
-                    <ArrowUpRight size={20} />
-                  </a>
+                  {project.liveUrl && project.github ? (
+                    <div className="flex items-center gap-2">
+                      <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 uppercase tracking-wider">
+                        Live
+                      </span>
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
+                        className="text-emerald-400 hover:text-emerald-300 transition-colors hover:scale-110">
+                        <ExternalLink size={18} />
+                      </a>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer"
+                        className="text-slate-500 hover:text-white transition-colors hover:scale-110">
+                        <Github size={18} />
+                      </a>
+                    </div>
+                  ) : project.github ? (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer"
+                      className="text-slate-500 hover:text-white transition-colors hover:scale-110">
+                      <ArrowUpRight size={20} />
+                    </a>
+                  ) : (
+                    <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 uppercase tracking-wider">
+                      Award
+                    </span>
+                  )}
                 </div>
 
                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-violet-300 transition-colors">{project.title}</h3>
@@ -583,6 +597,8 @@ export default function Portfolio() {
         </div>
         <p>© {new Date().getFullYear()} Dipika Ranabhat. Engineered with Next.js & Tailwind.</p>
       </footer>
+
+      {/* <Script src="https://bizbot.ai/widget.js" data-tenant-id="2e7a36bb-4874-49bf-93c4-22c465dd3b89" strategy="afterInteractive" /> */}
     </div>
   );
 }
